@@ -1,0 +1,56 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.analysis";
+option java_outer_classname = "AnalysisProto";
+option objc_class_prefix = "HLW";
+
+package analysis;
+
+// The analysis service definition.
+service Analysis {
+  // Sends an analysis request
+  rpc RequireAnalysis (AnalysisRequest) returns (AnalysisReply) {}
+}
+
+// The request message
+message AnalysisRequest {
+  bool e1 = 1;
+  bool e2 = 2;
+  bool e3 = 3;
+  bool e4 = 4;
+  bool buy_or_follow = 5;
+  float profit = 6;
+  float turnover = 7;
+  float increase = 8;
+  float win_percent = 9;
+  float lose_percent = 10;
+  float lose_cache = 11;
+  int32 days = 12;
+  bool force = 13;
+}
+
+// The response message
+message AnalysisReply {
+  bool e1 = 1;
+  bool e2 = 2;
+  bool e3 = 3;
+  bool e4 = 4;
+  bool buy_or_follow = 5;
+  int32 all_numerator = 6;
+  int32 all_denominator = 7;
+  float all_result = 8;
+  int32 profit_numerator = 9;
+  int32 profit_denominator = 10;
+  float profit_result = 11;
+  int32 turnover_numerator = 12;
+  int32 turnover_denominator = 13;
+  float turnover_result = 14;
+  int32 increase_numerator = 15;
+  int32 increase_denominator = 16;
+  float increase_result = 17;
+  string profit_sign = 18;
+  string turnover_sign = 19;
+  string increase_sign = 20;
+}
